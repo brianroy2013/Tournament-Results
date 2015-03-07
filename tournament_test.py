@@ -133,46 +133,46 @@ def testPairings():
     print "8. After one match, players with one win are paired."
 
 
-# def exampleMatch():
-#     deleteMatches()
-#     deletePlayers()
-#     registerPlayer("A")
-#     registerPlayer("B")
-#     registerPlayer("C")
-#     registerPlayer("D")
-#     registerPlayer("E")
-#     registerPlayer("F")
-#     registerPlayer("G")
-#     registerPlayer("H")
-#     standings = playerStandings()
-#     [a, b, c, d, e, f, g, h] = [row[0] for row in standings]
-#     print a,b,c,d,e,f,g,h
+def exampleMatch():
+    deleteMatches()
+    deletePlayers()
+    registerPlayer("A")
+    registerPlayer("B")
+    registerPlayer("C")
+    registerPlayer("D")
+    registerPlayer("E")
+    registerPlayer("F")
+    registerPlayer("G")
+    registerPlayer("H")
+    standings = playerStandings()
+    [a, b, c, d, e, f, g, h] = [row[0] for row in standings]
+    print a,b,c,d,e,f,g,h
 
-#     swissPairings()
+    swissPairings()
 
-#     #round 1
-#     reportMatch(b, a)
-#     reportMatch(c, d)
-#     reportMatch(f, e)
-#     reportMatch(g, h)
+    #round 1
+    reportMatch(b, a)
+    reportMatch(c, d)
+    reportMatch(f, e)
+    reportMatch(g, h)
 
-#     swissPairings()
+    swissPairings()
 
-#     #round 2
-#     reportMatch(c, b)
-#     reportMatch(f, g)
-#     reportMatch(d, a)
-#     reportMatch(h, e)
+    #round 2
+    reportMatch(c, b)
+    reportMatch(f, g)
+    reportMatch(d, a)
+    reportMatch(h, e)
     
-#     swissPairings()
+    swissPairings()
     
-#     #round 3
-#     reportMatch(c, f)
-#     reportMatch(g, b)
-#     reportMatch(h, d)
-#     reportMatch(e, a)
+    #round 3
+    reportMatch(c, f)
+    reportMatch(g, b)
+    reportMatch(h, d)
+    reportMatch(e, a)
 
-#     swissPairings()
+    swissPairings()
 
 if __name__ == '__main__':
 

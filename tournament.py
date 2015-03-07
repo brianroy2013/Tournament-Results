@@ -55,7 +55,7 @@ def registerPlayer(name):
     db = connect()
     cursor = db.cursor()
     name=bleach.clean(name)
-    cursor.execute("INSERT INTO players (name, wins, matches) VALUES (%s,0,0);", (name,))
+    cursor.execute("INSERT INTO players (name) VALUES (%s);", (name,))
     db.commit()
     db.close()
 
@@ -75,7 +75,7 @@ def playerStandings():
     """
     db = connect()
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM players ORDER BY players.wins DESC;")
+    cursor.execute("SELECT * FROM player_standings;")
     result=cursor.fetchall()
     db.commit()
     db.close()
@@ -94,11 +94,6 @@ def reportMatch(winner, loser):
 
     db = connect()
     cursor = db.cursor()
-
-    # the next two lines of code are used to track number of wins and matces for each player
-    cursor.execute("UPDATE players SET wins = wins+1, matches = matches+1 WHERE id=%s;",(winner,))
-    cursor.execute("UPDATE players SET matches = matches+1 WHERE id=%s;",(loser,))
-    db.commit()
 
     # insert match results in the database
     cursor.execute("INSERT INTO matches (winner, loser) VALUES (%s,%s);", (winner,loser)) 
