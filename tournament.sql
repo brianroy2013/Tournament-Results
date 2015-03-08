@@ -19,11 +19,11 @@ CREATE DATABASE tournament;
 CREATE TABLE players (id SERIAL PRIMARY KEY, name TEXT);
 
 -- The matches table keeps tracks of all the matchs played so far
-CREATE TABLE matches (winner INTEGER REFERENCES players(id), loser INTEGER REFERENCES players(id));
+CREATE TABLE matches (winner INTEGER REFERENCES players(id), loser INTEGER REFERENCES players(id), PRIMARY KEY (winner,loser));
 
 -- This view is used to add up all of the wins for each player (this view is used by "player_standings" view)
 CREATE VIEW number_of_wins AS
-	SELECT players.id, players.name, count(matches.winner) AS wins player_standings
+	SELECT players.id, players.name, count(matches.winner) AS wins
 	FROM players left join matches
 	ON players.id = matches.winner
 	GROUP BY players.name, players.id

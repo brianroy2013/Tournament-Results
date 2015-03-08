@@ -148,7 +148,7 @@ def exampleMatch():
     [a, b, c, d, e, f, g, h] = [row[0] for row in standings]
     print a,b,c,d,e,f,g,h
 
-    swissPairings()
+    # swissPairings()
 
     #round 1
     reportMatch(b, a)
@@ -172,7 +172,7 @@ def exampleMatch():
     reportMatch(h, d)
     reportMatch(e, a)
 
-    swissPairings()
+    # swissPairings()
 
 if __name__ == '__main__':
 
